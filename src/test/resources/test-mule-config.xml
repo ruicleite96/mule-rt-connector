@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:odoo="http://www.mulesoft.org/schema/mule/odoo"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/odoo http://www.mulesoft.org/schema/mule/odoo/current/mule-odoo.xsd">
+
+    <odoo:config name="config" configId="configId">
+        <odoo:connection requiredParameter="aValue" />
+    </odoo:config>
+
+    <flow name="sayHiFlow">
+        <odoo:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <odoo:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>

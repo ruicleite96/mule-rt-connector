@@ -1,0 +1,32 @@
+# maven
+target/
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# eclipse
+.classpath
+.settings/
+.project
+.factorypath
+
+# Mule Studio
+.studio
+demo/**/catalog
+
+# OS X
+.DS_Store
+
+# Windows
+
+# Linux
+bin/
+
+# Credential file for individual developer
+# which should NOT be committed
+automation-credentials.properties
+interop-testdata-override.xml
+interop-testdata.xml
