@@ -73,10 +73,10 @@ public final class RTConnection {
     }
 
     public HttpResponse sendRequest(HttpRequest request) throws IOException, TimeoutException {
-        return httpClient.send(request, 500, false, authentication);
+        return httpClient.send(request, 5000, false, authentication);
     }
 
     public CompletableFuture<HttpResponse> sendRequestAsync(HttpRequest request) {
-        return httpClient.sendAsync(request, 500, false, authentication);
+        return httpClient.sendAsync(request, 5000, false, authentication);
     }
 }

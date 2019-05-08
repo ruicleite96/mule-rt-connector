@@ -1,0 +1,2292 @@
+{
+  "name": "Request Tracker",
+  "description": "",
+  "version": "0.0.2-SNAPSHOT",
+  "vendor": "Eurotux Informática, S.A.",
+  "category": "COMMUNITY",
+  "xmlDsl": {
+    "prefix": "rt",
+    "namespace": "http://www.mulesoft.org/schema/mule/rt",
+    "schemaLocation": "http://www.mulesoft.org/schema/mule/rt/current/mule-rt.xsd",
+    "schemaVersion": "0.0.2-SNAPSHOT",
+    "xsdFileName": "mule-rt.xsd"
+  },
+  "resources": [],
+  "subTypes": [],
+  "privilegedPackages": [],
+  "privilegedArtifacts": [],
+  "externalLibraries": [],
+  "importedTypes": [],
+  "configurations": [
+    {
+      "stereotype": {
+        "type": "CONFIG",
+        "namespace": "RT",
+        "parent": {
+          "type": "MODULE_CONFIG",
+          "namespace": "MULE"
+        }
+      },
+      "parameterGroupModels": [
+        {
+          "parameters": [
+            {
+              "type": {
+                "format": "java",
+                "type": "Object",
+                "annotations": {
+                  "typeId": "org.mule.runtime.extension.api.runtime.ExpirationPolicy",
+                  "description": {
+                    "value": "Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit."
+                  },
+                  "typeDsl": {
+                    "allowInlineDefinition": true,
+                    "allowTopLevelDefinition": false
+                  }
+                },
+                "fields": [
+                  {
+                    "key": {
+                      "name": "maxIdleTime"
+                    },
+                    "model": {
+                      "type": "Number",
+                      "annotations": {
+                        "int": {},
+                        "classInformation": {
+                          "classname": "java.lang.Long",
+                          "hasDefaultConstructor": false,
+                          "isInterface": false,
+                          "isInstantiable": false,
+                          "isAbstract": false,
+                          "isFinal": true,
+                          "implementedInterfaces": [
+                            "java.lang.Comparable"
+                          ],
+                          "parent": "java.lang.Number",
+                          "genericTypes": [],
+                          "isMap": false
+                        },
+                        "default": "5"
+                      }
+                    },
+                    "annotations": {
+                      "description": {
+                        "value": "A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it\u0027s considered eligible for expiration"
+                      },
+                      "expressionSupport": {
+                        "value": "NOT_SUPPORTED"
+                      }
+                    }
+                  },
+                  {
+                    "key": {
+                      "name": "timeUnit"
+                    },
+                    "model": {
+                      "type": "String",
+                      "annotations": {
+                        "enum": {
+                          "type": "[Ljava.lang.String;",
+                          "values": [
+                            "NANOSECONDS",
+                            "MICROSECONDS",
+                            "MILLISECONDS",
+                            "SECONDS",
+                            "MINUTES",
+                            "HOURS",
+                            "DAYS"
+                          ]
+                        },
+                        "default": "MINUTES"
+                      }
+                    },
+                    "annotations": {
+                      "description": {
+                        "value": "A time unit that qualifies the maxIdleTime attribute"
+                      },
+                      "expressionSupport": {
+                        "value": "NOT_SUPPORTED"
+                      }
+                    }
+                  }
+                ]
+              },
+              "hasDynamicType": false,
+              "required": false,
+              "isConfigOverride": false,
+              "expressionSupport": "NOT_SUPPORTED",
+              "role": "BEHAVIOUR",
+              "dslConfiguration": {
+                "allowsInlineDefinition": true,
+                "allowsReferences": false,
+                "allowTopLevelDefinition": false
+              },
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 1,
+                "tabName": "Advanced"
+              },
+              "allowedStereotypeModels": [],
+              "name": "expirationPolicy",
+              "description": "Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit.",
+              "modelProperties": {
+                "org.mule.runtime.extension.api.property.QNameModelProperty": {
+                  "value": {
+                    "namespaceURI": "http://www.mulesoft.org/schema/mule/core",
+                    "localPart": "expiration-policy",
+                    "prefix": "mule"
+                  }
+                },
+                "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {
+                  "sequence": 4
+                }
+              }
+            }
+          ],
+          "exclusiveParametersModels": [],
+          "layoutModel": {
+            "password": false,
+            "text": false,
+            "query": false,
+            "order": 1
+          },
+          "showInDsl": false,
+          "name": "General",
+          "description": "",
+          "modelProperties": {}
+        }
+      ],
+      "externalLibraryModels": [],
+      "operations": [
+        {
+          "blocking": true,
+          "executionType": "BLOCKING",
+          "output": {
+            "type": {
+              "format": "json",
+              "type": "String"
+            },
+            "hasDynamicType": false,
+            "description": "",
+            "modelProperties": {}
+          },
+          "outputAttributes": {
+            "type": {
+              "format": "java",
+              "type": "Void"
+            },
+            "hasDynamicType": false,
+            "description": "",
+            "modelProperties": {}
+          },
+          "transactional": false,
+          "requiresConnection": true,
+          "supportsStreaming": false,
+          "notifications": [],
+          "nestedComponents": [],
+          "errors": [
+            "RT:RETRY_EXHAUSTED",
+            "RT:FORBIDDEN",
+            "RT:CONNECTIVITY",
+            "RT:TOO_MANY_REQUESTS",
+            "RT:SERVICE_UNAVAILABLE",
+            "MULE:CLIENT_SECURITY",
+            "RT:UNAUTHORIZED",
+            "RT:METHOD_NOT_ALLOWED",
+            "RT:INTERNAL_SERVER_ERROR",
+            "RT:NOT_FOUND",
+            "RT:UNSUPPORTED_MEDIA_TYPE",
+            "RT:TIMEOUT",
+            "RT:UNKNOWN_ERROR",
+            "RT:BAD_REQUEST"
+          ],
+          "stereotype": {
+            "type": "PROCESSOR",
+            "namespace": "MULE"
+          },
+          "parameterGroupModels": [
+            {
+              "parameters": [
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "Number",
+                    "annotations": {
+                      "classInformation": {
+                        "classname": "int",
+                        "hasDefaultConstructor": false,
+                        "isInterface": false,
+                        "isInstantiable": false,
+                        "isAbstract": true,
+                        "isFinal": true,
+                        "implementedInterfaces": [],
+                        "parent": "",
+                        "genericTypes": [],
+                        "isMap": false
+                      },
+                      "int": {}
+                    }
+                  },
+                  "hasDynamicType": false,
+                  "required": true,
+                  "isConfigOverride": false,
+                  "expressionSupport": "SUPPORTED",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": true,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 1
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "ticketId",
+                  "description": "",
+                  "modelProperties": {}
+                },
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "Object",
+                    "annotations": {
+                      "classInformation": {
+                        "classname": "java.util.Map",
+                        "hasDefaultConstructor": false,
+                        "isInterface": true,
+                        "isInstantiable": false,
+                        "isAbstract": true,
+                        "isFinal": false,
+                        "implementedInterfaces": [],
+                        "parent": "",
+                        "genericTypes": [
+                          "java.lang.String",
+                          "java.lang.String"
+                        ],
+                        "isMap": true
+                      }
+                    },
+                    "open": {
+                      "type": "String"
+                    },
+                    "fields": []
+                  },
+                  "hasDynamicType": false,
+                  "required": true,
+                  "isConfigOverride": false,
+                  "expressionSupport": "SUPPORTED",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": true,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 2
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "fields",
+                  "description": "",
+                  "modelProperties": {}
+                },
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "Array",
+                    "annotations": {
+                      "classInformation": {
+                        "classname": "java.util.List",
+                        "hasDefaultConstructor": false,
+                        "isInterface": true,
+                        "isInstantiable": false,
+                        "isAbstract": true,
+                        "isFinal": false,
+                        "implementedInterfaces": [
+                          "java.util.Collection"
+                        ],
+                        "parent": "",
+                        "genericTypes": [
+                          "java.lang.String"
+                        ],
+                        "isMap": false
+                      }
+                    },
+                    "item": {
+                      "type": "String"
+                    }
+                  },
+                  "hasDynamicType": false,
+                  "required": true,
+                  "isConfigOverride": false,
+                  "expressionSupport": "SUPPORTED",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": true,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 3
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "transactionTypes",
+                  "description": "",
+                  "modelProperties": {}
+                },
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "Boolean",
+                    "annotations": {
+                      "typeId": "boolean"
+                    }
+                  },
+                  "hasDynamicType": false,
+                  "required": false,
+                  "isConfigOverride": false,
+                  "expressionSupport": "SUPPORTED",
+                  "defaultValue": "false",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": true,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 4
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "withTimeTaken",
+                  "description": "",
+                  "modelProperties": {}
+                }
+              ],
+              "exclusiveParametersModels": [],
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 1
+              },
+              "showInDsl": false,
+              "name": "General",
+              "description": "",
+              "modelProperties": {}
+            },
+            {
+              "parameters": [
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "hasDynamicType": false,
+                  "required": false,
+                  "isConfigOverride": false,
+                  "expressionSupport": "NOT_SUPPORTED",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": true,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 5,
+                    "tabName": "Advanced"
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "target",
+                  "displayModel": {
+                    "displayName": "Target Variable"
+                  },
+                  "description": "The name of a variable on which the operation\u0027s output will be placed",
+                  "modelProperties": {}
+                },
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "hasDynamicType": false,
+                  "required": false,
+                  "isConfigOverride": false,
+                  "expressionSupport": "REQUIRED",
+                  "defaultValue": "#[payload]",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": true,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 6,
+                    "tabName": "Advanced"
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "targetValue",
+                  "displayModel": {
+                    "displayName": "Target Value"
+                  },
+                  "description": "An expression that will be evaluated against the operation\u0027s output and the outcome of that expression will be stored in the target variable",
+                  "modelProperties": {}
+                }
+              ],
+              "exclusiveParametersModels": [],
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 2
+              },
+              "showInDsl": false,
+              "name": "Output",
+              "description": "",
+              "modelProperties": {}
+            },
+            {
+              "parameters": [
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "Union",
+                    "annotations": {
+                      "typeId": "ReconnectionStrategy"
+                    },
+                    "of": [
+                      {
+                        "type": "Object",
+                        "annotations": {
+                          "typeId": "reconnect"
+                        },
+                        "fields": [
+                          {
+                            "key": {
+                              "name": "frequency"
+                            },
+                            "model": {
+                              "type": "Number",
+                              "annotations": {
+                                "int": {},
+                                "classInformation": {
+                                  "classname": "java.lang.Long",
+                                  "hasDefaultConstructor": false,
+                                  "isInterface": false,
+                                  "isInstantiable": false,
+                                  "isAbstract": false,
+                                  "isFinal": true,
+                                  "implementedInterfaces": [
+                                    "java.lang.Comparable"
+                                  ],
+                                  "parent": "java.lang.Number",
+                                  "genericTypes": [],
+                                  "isMap": false
+                                },
+                                "default": "2000"
+                              }
+                            },
+                            "annotations": {
+                              "description": {
+                                "value": "How often (in ms) to reconnect"
+                              }
+                            }
+                          },
+                          {
+                            "key": {
+                              "name": "count"
+                            },
+                            "model": {
+                              "type": "Number",
+                              "annotations": {
+                                "int": {},
+                                "default": "2"
+                              }
+                            },
+                            "annotations": {
+                              "description": {
+                                "value": "How many reconnection attempts to make"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Object",
+                        "annotations": {
+                          "typeId": "reconnect-forever"
+                        },
+                        "fields": [
+                          {
+                            "key": {
+                              "name": "frequency"
+                            },
+                            "model": {
+                              "type": "Number",
+                              "annotations": {
+                                "int": {},
+                                "classInformation": {
+                                  "classname": "java.lang.Long",
+                                  "hasDefaultConstructor": false,
+                                  "isInterface": false,
+                                  "isInstantiable": false,
+                                  "isAbstract": false,
+                                  "isFinal": true,
+                                  "implementedInterfaces": [
+                                    "java.lang.Comparable"
+                                  ],
+                                  "parent": "java.lang.Number",
+                                  "genericTypes": [],
+                                  "isMap": false
+                                },
+                                "default": "2000"
+                              }
+                            },
+                            "annotations": {
+                              "description": {
+                                "value": "How often (in ms) to reconnect"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "hasDynamicType": false,
+                  "required": false,
+                  "isConfigOverride": false,
+                  "expressionSupport": "NOT_SUPPORTED",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": false,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 7,
+                    "tabName": "Advanced"
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "reconnectionStrategy",
+                  "description": "A retry strategy in case of connectivity errors",
+                  "modelProperties": {
+                    "org.mule.runtime.extension.api.property.QNameModelProperty": {
+                      "value": {
+                        "namespaceURI": "http://www.mulesoft.org/schema/mule/core",
+                        "localPart": "abstract-reconnection-strategy",
+                        "prefix": "mule"
+                      }
+                    },
+                    "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {
+                      "sequence": 3
+                    }
+                  }
+                }
+              ],
+              "exclusiveParametersModels": [],
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 3
+              },
+              "showInDsl": false,
+              "name": "Connection",
+              "description": "",
+              "modelProperties": {}
+            }
+          ],
+          "name": "getAllTicketTransactions",
+          "displayModel": {
+            "displayName": "Get Ticket Transactions"
+          },
+          "description": "",
+          "modelProperties": {},
+          "kind": "operation"
+        }
+      ],
+      "connectionProviders": [
+        {
+          "connectionManagementType": "CACHED",
+          "externalLibraryModels": [],
+          "supportsConnectivityTesting": true,
+          "stereotype": {
+            "type": "BASIC-AUTH-CONNECTIONS",
+            "namespace": "RT",
+            "parent": {
+              "type": "CONNECTION",
+              "namespace": "MULE"
+            }
+          },
+          "parameterGroupModels": [
+            {
+              "parameters": [
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "hasDynamicType": false,
+                  "required": true,
+                  "isConfigOverride": false,
+                  "expressionSupport": "SUPPORTED",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": true,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 1
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "apiUrl",
+                  "description": "",
+                  "modelProperties": {}
+                },
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "hasDynamicType": false,
+                  "required": true,
+                  "isConfigOverride": false,
+                  "expressionSupport": "SUPPORTED",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": true,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 2
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "username",
+                  "description": "",
+                  "modelProperties": {}
+                },
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "hasDynamicType": false,
+                  "required": true,
+                  "isConfigOverride": false,
+                  "expressionSupport": "SUPPORTED",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": true,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": true,
+                    "text": false,
+                    "query": false,
+                    "order": 3
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "password",
+                  "description": "",
+                  "modelProperties": {}
+                },
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "Object",
+                    "annotations": {
+                      "typeId": "org.mule.runtime.api.tls.TlsContextFactory",
+                      "typeAlias": {
+                        "value": "Tls"
+                      },
+                      "typeDsl": {
+                        "allowInlineDefinition": true,
+                        "allowTopLevelDefinition": true
+                      },
+                      "QName": {
+                        "value": {
+                          "namespaceURI": "http://www.mulesoft.org/schema/mule/tls",
+                          "localPart": "context",
+                          "prefix": "tls"
+                        }
+                      }
+                    },
+                    "fields": [
+                      {
+                        "key": {
+                          "name": "enabledProtocols"
+                        },
+                        "model": {
+                          "type": "String"
+                        },
+                        "annotations": {
+                          "description": {
+                            "value": "A comma separated list of protocols enabled for this context."
+                          }
+                        }
+                      },
+                      {
+                        "key": {
+                          "name": "enabledCipherSuites"
+                        },
+                        "model": {
+                          "type": "String"
+                        },
+                        "annotations": {
+                          "description": {
+                            "value": "A comma separated list of cipher suites enabled for this context."
+                          }
+                        }
+                      },
+                      {
+                        "key": {
+                          "name": "trust-store"
+                        },
+                        "model": {
+                          "type": "Object",
+                          "annotations": {
+                            "typeId": "TrustStore",
+                            "description": {
+                              "value": "Trust store configuration. If used client side, the trust store contains the certificates of the trusted servers. If used server side, it contains the certificates of the trusted clients."
+                            }
+                          },
+                          "fields": [
+                            {
+                              "key": {
+                                "name": "path"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The location (which will be resolved relative to the current classpath and file system, if possible) of the trust store."
+                                },
+                                "display": {
+                                  "displayModel": {
+                                    "pathModel": {
+                                      "type": "FILE",
+                                      "fileExtensions": [],
+                                      "acceptsUrls": false,
+                                      "location": "EMBEDDED"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "password"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The password used to protect the trust store."
+                                },
+                                "layout": {
+                                  "layoutModel": {
+                                    "password": true,
+                                    "text": false,
+                                    "query": false
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "type"
+                              },
+                              "model": {
+                                "type": "String",
+                                "annotations": {
+                                  "display": {
+                                    "displayModel": {
+                                      "example": "jks, jceks, pkcs12 or other store type"
+                                    }
+                                  }
+                                }
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The type of store used."
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "algorithm"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The algorithm used by the trust store."
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "insecure"
+                              },
+                              "model": {
+                                "type": "Boolean",
+                                "annotations": {
+                                  "default": "false"
+                                }
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "If true, no certificate validations will be performed, rendering connections vulnerable to attacks. Use at your own risk."
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "annotations": {
+                          "parameterDsl": {
+                            "allowInlineDefinition": true,
+                            "allowReferences": false
+                          },
+                          "expressionSupport": {
+                            "value": "NOT_SUPPORTED"
+                          }
+                        }
+                      },
+                      {
+                        "key": {
+                          "name": "key-store"
+                        },
+                        "model": {
+                          "type": "Object",
+                          "annotations": {
+                            "typeId": "KeyStore",
+                            "description": {
+                              "value": "Key store configuration. The key store contains the keys of this server/client."
+                            }
+                          },
+                          "fields": [
+                            {
+                              "key": {
+                                "name": "path"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The location (which will be resolved relative to the current classpath and file system, if possible) of the key store."
+                                },
+                                "display": {
+                                  "displayModel": {
+                                    "pathModel": {
+                                      "type": "FILE",
+                                      "fileExtensions": [],
+                                      "acceptsUrls": false,
+                                      "location": "EMBEDDED"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "type"
+                              },
+                              "model": {
+                                "type": "String",
+                                "annotations": {
+                                  "display": {
+                                    "displayModel": {
+                                      "example": "jks, jceks, pkcs12 or other store type"
+                                    }
+                                  }
+                                }
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The type of store used."
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "alias"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "When the key store contains many private keys, this attribute indicates the alias of the key that should be used. If not defined, the first key in the file will be used by default."
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "keyPassword"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The password used to protect the private key."
+                                },
+                                "layout": {
+                                  "layoutModel": {
+                                    "password": true,
+                                    "text": false,
+                                    "query": false
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "password"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The password used to protect the key store."
+                                },
+                                "layout": {
+                                  "layoutModel": {
+                                    "password": true,
+                                    "text": false,
+                                    "query": false
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "algorithm"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The algorithm used by the key store."
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "annotations": {
+                          "parameterDsl": {
+                            "allowInlineDefinition": true,
+                            "allowReferences": false
+                          },
+                          "expressionSupport": {
+                            "value": "NOT_SUPPORTED"
+                          }
+                        }
+                      },
+                      {
+                        "key": {
+                          "name": "revocation-check"
+                        },
+                        "model": {
+                          "type": "Union",
+                          "annotations": {
+                            "typeId": "RevocationCheck"
+                          },
+                          "of": [
+                            {
+                              "type": "Object",
+                              "annotations": {
+                                "typeId": "standard-revocation-check",
+                                "description": {
+                                  "value": "Uses the standard JVM certificate revocation checks, which depend on the certificate having the corresponding extension points (additional tags for CRLDP or OCSP), and the availability of revocation servers."
+                                }
+                              },
+                              "fields": [
+                                {
+                                  "key": {
+                                    "name": "onlyEndEntities"
+                                  },
+                                  "model": {
+                                    "type": "Boolean",
+                                    "annotations": {
+                                      "default": "false"
+                                    }
+                                  },
+                                  "annotations": {
+                                    "description": {
+                                      "value": "Only verify the last element of the certificate chain."
+                                    }
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "name": "preferCrls"
+                                  },
+                                  "model": {
+                                    "type": "Boolean",
+                                    "annotations": {
+                                      "default": "false"
+                                    }
+                                  },
+                                  "annotations": {
+                                    "description": {
+                                      "value": "Try CRL instead of OCSP first."
+                                    }
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "name": "noFallback"
+                                  },
+                                  "model": {
+                                    "type": "Boolean",
+                                    "annotations": {
+                                      "default": "false"
+                                    }
+                                  },
+                                  "annotations": {
+                                    "description": {
+                                      "value": "Do not use the secondary checking method (the one not selected before)."
+                                    }
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "name": "softFail"
+                                  },
+                                  "model": {
+                                    "type": "Boolean",
+                                    "annotations": {
+                                      "default": "false"
+                                    }
+                                  },
+                                  "annotations": {
+                                    "description": {
+                                      "value": "Avoid verification failure when the revocation server can not be reached or is busy."
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Object",
+                              "annotations": {
+                                "typeId": "custom-ocsp-responder",
+                                "description": {
+                                  "value": "Uses a custom OCSP responder for certificate revocation checks, with a specific trusted certificate for revocating other keys. This ignores extension points (additional tags for CRLDP or OCSP) present in the certificate, if any."
+                                }
+                              },
+                              "fields": [
+                                {
+                                  "key": {
+                                    "name": "url"
+                                  },
+                                  "model": {
+                                    "type": "String"
+                                  },
+                                  "annotations": {
+                                    "description": {
+                                      "value": "The URL of the OCSP responder."
+                                    }
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "name": "certAlias"
+                                  },
+                                  "model": {
+                                    "type": "String"
+                                  },
+                                  "annotations": {
+                                    "description": {
+                                      "value": "Alias of the signing certificate for the OCSP response (must be in the trust store), if present."
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Object",
+                              "annotations": {
+                                "typeId": "crl-file",
+                                "description": {
+                                  "value": "Local file based certificate revocation checker, which requires a CRL file to be accessible and ignores extension points (additional tags for CRLDP and OCSP) in the certificate."
+                                }
+                              },
+                              "fields": [
+                                {
+                                  "key": {
+                                    "name": "path"
+                                  },
+                                  "model": {
+                                    "type": "String"
+                                  },
+                                  "annotations": {
+                                    "description": {
+                                      "value": "The path to the CRL file."
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "annotations": {
+                          "parameterDsl": {
+                            "allowInlineDefinition": true,
+                            "allowReferences": false
+                          },
+                          "expressionSupport": {
+                            "value": "NOT_SUPPORTED"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "hasDynamicType": false,
+                  "required": false,
+                  "isConfigOverride": false,
+                  "expressionSupport": "NOT_SUPPORTED",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": true,
+                    "allowTopLevelDefinition": true
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 4
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "tlsContext",
+                  "description": "",
+                  "modelProperties": {
+                    "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {
+                      "sequence": 8
+                    },
+                    "org.mule.runtime.extension.api.property.QNameModelProperty": {
+                      "value": {
+                        "namespaceURI": "http://www.mulesoft.org/schema/mule/tls",
+                        "localPart": "context",
+                        "prefix": "tls"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": {
+                    "format": "java",
+                    "type": "Object",
+                    "annotations": {
+                      "typeId": "Reconnection"
+                    },
+                    "fields": [
+                      {
+                        "key": {
+                          "name": "failsDeployment"
+                        },
+                        "model": {
+                          "type": "Boolean",
+                          "annotations": {
+                            "default": "false"
+                          }
+                        },
+                        "annotations": {
+                          "description": {
+                            "value": "When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn\u0027t pass after exhausting the associated reconnection strategy"
+                          }
+                        }
+                      },
+                      {
+                        "key": {
+                          "name": "reconnectionStrategy"
+                        },
+                        "model": {
+                          "type": "Union",
+                          "annotations": {
+                            "typeId": "ReconnectionStrategy"
+                          },
+                          "of": [
+                            {
+                              "type": "Object",
+                              "annotations": {
+                                "typeId": "reconnect"
+                              },
+                              "fields": [
+                                {
+                                  "key": {
+                                    "name": "frequency"
+                                  },
+                                  "model": {
+                                    "type": "Number",
+                                    "annotations": {
+                                      "int": {},
+                                      "classInformation": {
+                                        "classname": "java.lang.Long",
+                                        "hasDefaultConstructor": false,
+                                        "isInterface": false,
+                                        "isInstantiable": false,
+                                        "isAbstract": false,
+                                        "isFinal": true,
+                                        "implementedInterfaces": [
+                                          "java.lang.Comparable"
+                                        ],
+                                        "parent": "java.lang.Number",
+                                        "genericTypes": [],
+                                        "isMap": false
+                                      },
+                                      "default": "2000"
+                                    }
+                                  },
+                                  "annotations": {
+                                    "description": {
+                                      "value": "How often (in ms) to reconnect"
+                                    }
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "name": "count"
+                                  },
+                                  "model": {
+                                    "type": "Number",
+                                    "annotations": {
+                                      "int": {},
+                                      "default": "2"
+                                    }
+                                  },
+                                  "annotations": {
+                                    "description": {
+                                      "value": "How many reconnection attempts to make"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Object",
+                              "annotations": {
+                                "typeId": "reconnect-forever"
+                              },
+                              "fields": [
+                                {
+                                  "key": {
+                                    "name": "frequency"
+                                  },
+                                  "model": {
+                                    "type": "Number",
+                                    "annotations": {
+                                      "int": {},
+                                      "classInformation": {
+                                        "classname": "java.lang.Long",
+                                        "hasDefaultConstructor": false,
+                                        "isInterface": false,
+                                        "isInstantiable": false,
+                                        "isAbstract": false,
+                                        "isFinal": true,
+                                        "implementedInterfaces": [
+                                          "java.lang.Comparable"
+                                        ],
+                                        "parent": "java.lang.Number",
+                                        "genericTypes": [],
+                                        "isMap": false
+                                      },
+                                      "default": "2000"
+                                    }
+                                  },
+                                  "annotations": {
+                                    "description": {
+                                      "value": "How often (in ms) to reconnect"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "annotations": {
+                          "description": {
+                            "value": "The reconnection strategy to use"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "hasDynamicType": false,
+                  "required": false,
+                  "isConfigOverride": false,
+                  "expressionSupport": "NOT_SUPPORTED",
+                  "role": "BEHAVIOUR",
+                  "dslConfiguration": {
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": false,
+                    "allowTopLevelDefinition": false
+                  },
+                  "layoutModel": {
+                    "password": false,
+                    "text": false,
+                    "query": false,
+                    "order": 5,
+                    "tabName": "Advanced"
+                  },
+                  "allowedStereotypeModels": [],
+                  "name": "reconnection",
+                  "description": "When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn\u0027t pass after exhausting the associated reconnection strategy",
+                  "modelProperties": {
+                    "org.mule.runtime.extension.api.property.QNameModelProperty": {
+                      "value": {
+                        "namespaceURI": "http://www.mulesoft.org/schema/mule/core",
+                        "localPart": "reconnection",
+                        "prefix": "mule"
+                      }
+                    },
+                    "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {
+                      "sequence": 3
+                    }
+                  }
+                }
+              ],
+              "exclusiveParametersModels": [],
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 1
+              },
+              "showInDsl": false,
+              "name": "Connection",
+              "description": "",
+              "modelProperties": {}
+            }
+          ],
+          "name": "basic-auth-connections",
+          "displayModel": {
+            "displayName": "Basic Authentication Connection"
+          },
+          "description": "",
+          "modelProperties": {}
+        }
+      ],
+      "messageSources": [],
+      "name": "config",
+      "description": "Default configuration",
+      "modelProperties": {}
+    }
+  ],
+  "operations": [],
+  "functions": [],
+  "constructs": [],
+  "connectionProviders": [
+    {
+      "connectionManagementType": "CACHED",
+      "externalLibraryModels": [],
+      "supportsConnectivityTesting": true,
+      "stereotype": {
+        "type": "BASIC-AUTH-CONNECTIONS",
+        "namespace": "RT",
+        "parent": {
+          "type": "CONNECTION",
+          "namespace": "MULE"
+        }
+      },
+      "parameterGroupModels": [
+        {
+          "parameters": [
+            {
+              "type": {
+                "format": "java",
+                "type": "String"
+              },
+              "hasDynamicType": false,
+              "required": true,
+              "isConfigOverride": false,
+              "expressionSupport": "SUPPORTED",
+              "role": "BEHAVIOUR",
+              "dslConfiguration": {
+                "allowsInlineDefinition": true,
+                "allowsReferences": true,
+                "allowTopLevelDefinition": false
+              },
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 1
+              },
+              "allowedStereotypeModels": [],
+              "name": "apiUrl",
+              "description": "",
+              "modelProperties": {}
+            },
+            {
+              "type": {
+                "format": "java",
+                "type": "String"
+              },
+              "hasDynamicType": false,
+              "required": true,
+              "isConfigOverride": false,
+              "expressionSupport": "SUPPORTED",
+              "role": "BEHAVIOUR",
+              "dslConfiguration": {
+                "allowsInlineDefinition": true,
+                "allowsReferences": true,
+                "allowTopLevelDefinition": false
+              },
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 2
+              },
+              "allowedStereotypeModels": [],
+              "name": "username",
+              "description": "",
+              "modelProperties": {}
+            },
+            {
+              "type": {
+                "format": "java",
+                "type": "String"
+              },
+              "hasDynamicType": false,
+              "required": true,
+              "isConfigOverride": false,
+              "expressionSupport": "SUPPORTED",
+              "role": "BEHAVIOUR",
+              "dslConfiguration": {
+                "allowsInlineDefinition": true,
+                "allowsReferences": true,
+                "allowTopLevelDefinition": false
+              },
+              "layoutModel": {
+                "password": true,
+                "text": false,
+                "query": false,
+                "order": 3
+              },
+              "allowedStereotypeModels": [],
+              "name": "password",
+              "description": "",
+              "modelProperties": {}
+            },
+            {
+              "type": {
+                "format": "java",
+                "type": "Object",
+                "annotations": {
+                  "typeId": "org.mule.runtime.api.tls.TlsContextFactory",
+                  "typeAlias": {
+                    "value": "Tls"
+                  },
+                  "typeDsl": {
+                    "allowInlineDefinition": true,
+                    "allowTopLevelDefinition": true
+                  },
+                  "QName": {
+                    "value": {
+                      "namespaceURI": "http://www.mulesoft.org/schema/mule/tls",
+                      "localPart": "context",
+                      "prefix": "tls"
+                    }
+                  }
+                },
+                "fields": [
+                  {
+                    "key": {
+                      "name": "enabledProtocols"
+                    },
+                    "model": {
+                      "type": "String"
+                    },
+                    "annotations": {
+                      "description": {
+                        "value": "A comma separated list of protocols enabled for this context."
+                      }
+                    }
+                  },
+                  {
+                    "key": {
+                      "name": "enabledCipherSuites"
+                    },
+                    "model": {
+                      "type": "String"
+                    },
+                    "annotations": {
+                      "description": {
+                        "value": "A comma separated list of cipher suites enabled for this context."
+                      }
+                    }
+                  },
+                  {
+                    "key": {
+                      "name": "trust-store"
+                    },
+                    "model": {
+                      "type": "Object",
+                      "annotations": {
+                        "typeId": "TrustStore",
+                        "description": {
+                          "value": "Trust store configuration. If used client side, the trust store contains the certificates of the trusted servers. If used server side, it contains the certificates of the trusted clients."
+                        }
+                      },
+                      "fields": [
+                        {
+                          "key": {
+                            "name": "path"
+                          },
+                          "model": {
+                            "type": "String"
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "The location (which will be resolved relative to the current classpath and file system, if possible) of the trust store."
+                            },
+                            "display": {
+                              "displayModel": {
+                                "pathModel": {
+                                  "type": "FILE",
+                                  "fileExtensions": [],
+                                  "acceptsUrls": false,
+                                  "location": "EMBEDDED"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "key": {
+                            "name": "password"
+                          },
+                          "model": {
+                            "type": "String"
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "The password used to protect the trust store."
+                            },
+                            "layout": {
+                              "layoutModel": {
+                                "password": true,
+                                "text": false,
+                                "query": false
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "key": {
+                            "name": "type"
+                          },
+                          "model": {
+                            "type": "String",
+                            "annotations": {
+                              "display": {
+                                "displayModel": {
+                                  "example": "jks, jceks, pkcs12 or other store type"
+                                }
+                              }
+                            }
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "The type of store used."
+                            }
+                          }
+                        },
+                        {
+                          "key": {
+                            "name": "algorithm"
+                          },
+                          "model": {
+                            "type": "String"
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "The algorithm used by the trust store."
+                            }
+                          }
+                        },
+                        {
+                          "key": {
+                            "name": "insecure"
+                          },
+                          "model": {
+                            "type": "Boolean",
+                            "annotations": {
+                              "default": "false"
+                            }
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "If true, no certificate validations will be performed, rendering connections vulnerable to attacks. Use at your own risk."
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "annotations": {
+                      "parameterDsl": {
+                        "allowInlineDefinition": true,
+                        "allowReferences": false
+                      },
+                      "expressionSupport": {
+                        "value": "NOT_SUPPORTED"
+                      }
+                    }
+                  },
+                  {
+                    "key": {
+                      "name": "key-store"
+                    },
+                    "model": {
+                      "type": "Object",
+                      "annotations": {
+                        "typeId": "KeyStore",
+                        "description": {
+                          "value": "Key store configuration. The key store contains the keys of this server/client."
+                        }
+                      },
+                      "fields": [
+                        {
+                          "key": {
+                            "name": "path"
+                          },
+                          "model": {
+                            "type": "String"
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "The location (which will be resolved relative to the current classpath and file system, if possible) of the key store."
+                            },
+                            "display": {
+                              "displayModel": {
+                                "pathModel": {
+                                  "type": "FILE",
+                                  "fileExtensions": [],
+                                  "acceptsUrls": false,
+                                  "location": "EMBEDDED"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "key": {
+                            "name": "type"
+                          },
+                          "model": {
+                            "type": "String",
+                            "annotations": {
+                              "display": {
+                                "displayModel": {
+                                  "example": "jks, jceks, pkcs12 or other store type"
+                                }
+                              }
+                            }
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "The type of store used."
+                            }
+                          }
+                        },
+                        {
+                          "key": {
+                            "name": "alias"
+                          },
+                          "model": {
+                            "type": "String"
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "When the key store contains many private keys, this attribute indicates the alias of the key that should be used. If not defined, the first key in the file will be used by default."
+                            }
+                          }
+                        },
+                        {
+                          "key": {
+                            "name": "keyPassword"
+                          },
+                          "model": {
+                            "type": "String"
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "The password used to protect the private key."
+                            },
+                            "layout": {
+                              "layoutModel": {
+                                "password": true,
+                                "text": false,
+                                "query": false
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "key": {
+                            "name": "password"
+                          },
+                          "model": {
+                            "type": "String"
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "The password used to protect the key store."
+                            },
+                            "layout": {
+                              "layoutModel": {
+                                "password": true,
+                                "text": false,
+                                "query": false
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "key": {
+                            "name": "algorithm"
+                          },
+                          "model": {
+                            "type": "String"
+                          },
+                          "annotations": {
+                            "description": {
+                              "value": "The algorithm used by the key store."
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "annotations": {
+                      "parameterDsl": {
+                        "allowInlineDefinition": true,
+                        "allowReferences": false
+                      },
+                      "expressionSupport": {
+                        "value": "NOT_SUPPORTED"
+                      }
+                    }
+                  },
+                  {
+                    "key": {
+                      "name": "revocation-check"
+                    },
+                    "model": {
+                      "type": "Union",
+                      "annotations": {
+                        "typeId": "RevocationCheck"
+                      },
+                      "of": [
+                        {
+                          "type": "Object",
+                          "annotations": {
+                            "typeId": "standard-revocation-check",
+                            "description": {
+                              "value": "Uses the standard JVM certificate revocation checks, which depend on the certificate having the corresponding extension points (additional tags for CRLDP or OCSP), and the availability of revocation servers."
+                            }
+                          },
+                          "fields": [
+                            {
+                              "key": {
+                                "name": "onlyEndEntities"
+                              },
+                              "model": {
+                                "type": "Boolean",
+                                "annotations": {
+                                  "default": "false"
+                                }
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "Only verify the last element of the certificate chain."
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "preferCrls"
+                              },
+                              "model": {
+                                "type": "Boolean",
+                                "annotations": {
+                                  "default": "false"
+                                }
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "Try CRL instead of OCSP first."
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "noFallback"
+                              },
+                              "model": {
+                                "type": "Boolean",
+                                "annotations": {
+                                  "default": "false"
+                                }
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "Do not use the secondary checking method (the one not selected before)."
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "softFail"
+                              },
+                              "model": {
+                                "type": "Boolean",
+                                "annotations": {
+                                  "default": "false"
+                                }
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "Avoid verification failure when the revocation server can not be reached or is busy."
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Object",
+                          "annotations": {
+                            "typeId": "custom-ocsp-responder",
+                            "description": {
+                              "value": "Uses a custom OCSP responder for certificate revocation checks, with a specific trusted certificate for revocating other keys. This ignores extension points (additional tags for CRLDP or OCSP) present in the certificate, if any."
+                            }
+                          },
+                          "fields": [
+                            {
+                              "key": {
+                                "name": "url"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The URL of the OCSP responder."
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "certAlias"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "Alias of the signing certificate for the OCSP response (must be in the trust store), if present."
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Object",
+                          "annotations": {
+                            "typeId": "crl-file",
+                            "description": {
+                              "value": "Local file based certificate revocation checker, which requires a CRL file to be accessible and ignores extension points (additional tags for CRLDP and OCSP) in the certificate."
+                            }
+                          },
+                          "fields": [
+                            {
+                              "key": {
+                                "name": "path"
+                              },
+                              "model": {
+                                "type": "String"
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "The path to the CRL file."
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "annotations": {
+                      "parameterDsl": {
+                        "allowInlineDefinition": true,
+                        "allowReferences": false
+                      },
+                      "expressionSupport": {
+                        "value": "NOT_SUPPORTED"
+                      }
+                    }
+                  }
+                ]
+              },
+              "hasDynamicType": false,
+              "required": false,
+              "isConfigOverride": false,
+              "expressionSupport": "NOT_SUPPORTED",
+              "role": "BEHAVIOUR",
+              "dslConfiguration": {
+                "allowsInlineDefinition": true,
+                "allowsReferences": true,
+                "allowTopLevelDefinition": true
+              },
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 4
+              },
+              "allowedStereotypeModels": [],
+              "name": "tlsContext",
+              "description": "",
+              "modelProperties": {
+                "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {
+                  "sequence": 8
+                },
+                "org.mule.runtime.extension.api.property.QNameModelProperty": {
+                  "value": {
+                    "namespaceURI": "http://www.mulesoft.org/schema/mule/tls",
+                    "localPart": "context",
+                    "prefix": "tls"
+                  }
+                }
+              }
+            },
+            {
+              "type": {
+                "format": "java",
+                "type": "Object",
+                "annotations": {
+                  "typeId": "Reconnection"
+                },
+                "fields": [
+                  {
+                    "key": {
+                      "name": "failsDeployment"
+                    },
+                    "model": {
+                      "type": "Boolean",
+                      "annotations": {
+                        "default": "false"
+                      }
+                    },
+                    "annotations": {
+                      "description": {
+                        "value": "When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn\u0027t pass after exhausting the associated reconnection strategy"
+                      }
+                    }
+                  },
+                  {
+                    "key": {
+                      "name": "reconnectionStrategy"
+                    },
+                    "model": {
+                      "type": "Union",
+                      "annotations": {
+                        "typeId": "ReconnectionStrategy"
+                      },
+                      "of": [
+                        {
+                          "type": "Object",
+                          "annotations": {
+                            "typeId": "reconnect"
+                          },
+                          "fields": [
+                            {
+                              "key": {
+                                "name": "frequency"
+                              },
+                              "model": {
+                                "type": "Number",
+                                "annotations": {
+                                  "int": {},
+                                  "classInformation": {
+                                    "classname": "java.lang.Long",
+                                    "hasDefaultConstructor": false,
+                                    "isInterface": false,
+                                    "isInstantiable": false,
+                                    "isAbstract": false,
+                                    "isFinal": true,
+                                    "implementedInterfaces": [
+                                      "java.lang.Comparable"
+                                    ],
+                                    "parent": "java.lang.Number",
+                                    "genericTypes": [],
+                                    "isMap": false
+                                  },
+                                  "default": "2000"
+                                }
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "How often (in ms) to reconnect"
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "name": "count"
+                              },
+                              "model": {
+                                "type": "Number",
+                                "annotations": {
+                                  "int": {},
+                                  "default": "2"
+                                }
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "How many reconnection attempts to make"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Object",
+                          "annotations": {
+                            "typeId": "reconnect-forever"
+                          },
+                          "fields": [
+                            {
+                              "key": {
+                                "name": "frequency"
+                              },
+                              "model": {
+                                "type": "Number",
+                                "annotations": {
+                                  "int": {},
+                                  "classInformation": {
+                                    "classname": "java.lang.Long",
+                                    "hasDefaultConstructor": false,
+                                    "isInterface": false,
+                                    "isInstantiable": false,
+                                    "isAbstract": false,
+                                    "isFinal": true,
+                                    "implementedInterfaces": [
+                                      "java.lang.Comparable"
+                                    ],
+                                    "parent": "java.lang.Number",
+                                    "genericTypes": [],
+                                    "isMap": false
+                                  },
+                                  "default": "2000"
+                                }
+                              },
+                              "annotations": {
+                                "description": {
+                                  "value": "How often (in ms) to reconnect"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "annotations": {
+                      "description": {
+                        "value": "The reconnection strategy to use"
+                      }
+                    }
+                  }
+                ]
+              },
+              "hasDynamicType": false,
+              "required": false,
+              "isConfigOverride": false,
+              "expressionSupport": "NOT_SUPPORTED",
+              "role": "BEHAVIOUR",
+              "dslConfiguration": {
+                "allowsInlineDefinition": true,
+                "allowsReferences": false,
+                "allowTopLevelDefinition": false
+              },
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 5,
+                "tabName": "Advanced"
+              },
+              "allowedStereotypeModels": [],
+              "name": "reconnection",
+              "description": "When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn\u0027t pass after exhausting the associated reconnection strategy",
+              "modelProperties": {
+                "org.mule.runtime.extension.api.property.QNameModelProperty": {
+                  "value": {
+                    "namespaceURI": "http://www.mulesoft.org/schema/mule/core",
+                    "localPart": "reconnection",
+                    "prefix": "mule"
+                  }
+                },
+                "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {
+                  "sequence": 3
+                }
+              }
+            }
+          ],
+          "exclusiveParametersModels": [],
+          "layoutModel": {
+            "password": false,
+            "text": false,
+            "query": false,
+            "order": 1
+          },
+          "showInDsl": false,
+          "name": "Connection",
+          "description": "",
+          "modelProperties": {}
+        }
+      ],
+      "name": "basic-auth-connections",
+      "displayModel": {
+        "displayName": "Basic Authentication Connection"
+      },
+      "description": "",
+      "modelProperties": {}
+    }
+  ],
+  "messageSources": [],
+  "notifications": [],
+  "errors": [
+    {
+      "error": "RT:RETRY_EXHAUSTED",
+      "parent": "MULE:RETRY_EXHAUSTED",
+      "handleable": true
+    },
+    {
+      "error": "MULE:RETRY_EXHAUSTED",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:CONNECTIVITY",
+      "parent": "MULE:CONNECTIVITY",
+      "handleable": true
+    },
+    {
+      "error": "MULE:CONNECTIVITY",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:FORBIDDEN",
+      "parent": "MULE:CLIENT_SECURITY",
+      "handleable": true
+    },
+    {
+      "error": "MULE:CLIENT_SECURITY",
+      "parent": "MULE:SECURITY",
+      "handleable": true
+    },
+    {
+      "error": "MULE:SECURITY",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:SERVICE_UNAVAILABLE",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:TOO_MANY_REQUESTS",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:UNAUTHORIZED",
+      "parent": "MULE:CLIENT_SECURITY",
+      "handleable": true
+    },
+    {
+      "error": "RT:METHOD_NOT_ALLOWED",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:INTERNAL_SERVER_ERROR",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:NOT_FOUND",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:UNSUPPORTED_MEDIA_TYPE",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:TIMEOUT",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:UNKNOWN_ERROR",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "RT:BAD_REQUEST",
+      "parent": "MULE:ANY",
+      "handleable": true
+    }
+  ],
+  "modelProperties": {},
+  "types": []
+}
