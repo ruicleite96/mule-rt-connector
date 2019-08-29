@@ -23,6 +23,9 @@
                 <parameter name="password">
                     <description><![CDATA[]]></description>
                 </parameter>
+                <parameter name="token">
+                    <description><![CDATA[]]></description>
+                </parameter>
                 <parameter name="tlsContextFactory">
                     <description><![CDATA[]]></description>
                 </parameter>
@@ -43,6 +46,9 @@
                 <parameter name="password">
                     <description><![CDATA[]]></description>
                 </parameter>
+                <parameter name="token">
+                    <description><![CDATA[]]></description>
+                </parameter>
                 <parameter name="tlsContextFactory">
                     <description><![CDATA[]]></description>
                 </parameter>
@@ -57,7 +63,7 @@
         <parameters/>
     </extension>
     <operations>
-        <operation name="getAllTicketTransactions">
+        <operation name="getTicketTransactions">
             <description><![CDATA[]]></description>
             <parameters>
                 <parameter name="ticketId">
@@ -69,7 +75,7 @@
                 <parameter name="transactionTypes">
                     <description><![CDATA[]]></description>
                 </parameter>
-                <parameter name="withTimeTaken">
+                <parameter name="withTimeTakenFilter">
                     <description><![CDATA[]]></description>
                 </parameter>
                 <parameter name="target">
@@ -84,6 +90,33 @@
             </parameters>
         </operation>
     </operations>
-    <sources/>
+    <sources>
+        <source name="UpdatedTicketsListener">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="dateFrom">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="limit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="fields">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="primaryNodeOnly">
+                    <description><![CDATA[Whether this source should only be executed on the primary node when runnning in Cluster]]></description>
+                </parameter>
+                <parameter name="schedulingStrategy">
+                    <description><![CDATA[Configures the scheduler that triggers the polling]]></description>
+                </parameter>
+                <parameter name="redeliveryPolicy">
+                    <description><![CDATA[Defines a policy for processing the redelivery of the same message]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </source>
+    </sources>
     <types/>
 </extension-documentation>

@@ -1,5 +1,6 @@
 package com.eurotux.connector.rt.internal.connection;
 
+import jdk.nashorn.internal.objects.annotations.Property;
 import org.mule.runtime.api.tls.TlsContextFactory;
 import org.mule.runtime.extension.api.annotation.param.Optional;
 import org.mule.runtime.extension.api.annotation.param.Parameter;
@@ -11,11 +12,16 @@ public class RTConfiguration {
     private String apiUrl;
 
     @Parameter
+    @Optional
     private String username;
 
     @Parameter
+    @Optional
     @Password
     private String password;
+
+    @Parameter
+    private String token;
 
     @Parameter
     @Optional
@@ -34,7 +40,12 @@ public class RTConfiguration {
         return password;
     }
 
+    public String getToken() {
+        return token;
+    }
+
     public TlsContextFactory getTlsContextFactory() {
         return tlsContextFactory;
     }
+
 }

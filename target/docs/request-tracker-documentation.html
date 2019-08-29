@@ -2076,7 +2076,12 @@ table.CodeRay td.code>pre{padding:0}
 </li>
 <li><a href="#_operations">Operations</a>
 <ul class="sectlevel2">
-<li><a href="#getAllTicketTransactions">Get Ticket Transactions</a></li>
+<li><a href="#getTicketTransactions">Get Ticket Transactions</a></li>
+</ul>
+</li>
+<li><a href="#_sources">Sources</a>
+<ul class="sectlevel2">
+<li><a href="#UpdatedTicketsListener">Updated Tickets Listener</a></li>
 </ul>
 </li>
 <li><a href="#_types">Types</a>
@@ -2091,6 +2096,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#reconnect">Reconnect</a></li>
 <li><a href="#reconnect-forever">Reconnect Forever</a></li>
 <li><a href="#ExpirationPolicy">Expiration Policy</a></li>
+<li><a href="#RedeliveryPolicy">Redelivery Policy</a></li>
 </ul>
 </li>
 </ul>
@@ -2196,10 +2202,19 @@ Default configuration
 </div></div></td>
 <td class="tableblock halign-left valign-middle"></td>
 <td class="tableblock halign-left valign-middle"></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>x</strong>&#160;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#160;</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">Password</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Token</p></td>
 <td class="tableblock halign-left valign-middle"><div><div class="paragraph">
 <p>String</p>
 </div></div></td>
@@ -2235,7 +2250,17 @@ Default configuration
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#getAllTicketTransactions">Get Ticket Transactions</a> &#160;</p>
+<p><a href="#getTicketTransactions">Get Ticket Transactions</a> &#160;</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_associated_sources">Associated Sources</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#UpdatedTicketsListener">Updated Tickets Listener</a> &#160;</p>
 </li>
 </ul>
 </div>
@@ -2247,9 +2272,9 @@ Default configuration
 <h2 id="_operations">Operations</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="getAllTicketTransactions">Get Ticket Transactions</h3>
+<h3 id="getTicketTransactions">Get Ticket Transactions</h3>
 <div class="paragraph">
-<p><code>&lt;rt:get-all-ticket-transactions&gt;</code></p>
+<p><code>&lt;rt:get-ticket-transactions&gt;</code></p>
 </div>
 <div class="sect3">
 <h4 id="_parameters_3">Parameters</h4>
@@ -2306,7 +2331,7 @@ Default configuration
 <td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>x</strong>&#160;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">With Time Taken</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">With Time Taken Filter</p></td>
 <td class="tableblock halign-left valign-middle"><div><div class="paragraph">
 <p>Boolean</p>
 </div></div></td>
@@ -2423,6 +2448,144 @@ Default configuration
 </li>
 <li>
 <p>RT:BAD_REQUEST &#160;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sources">Sources</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="UpdatedTicketsListener">Updated Tickets Listener</h3>
+<div class="paragraph">
+<p><code>&lt;rt:updated-tickets-listener&gt;</code></p>
+</div>
+<div class="sect3">
+<h4 id="_parameters_4">Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 35%;">
+<col style="width: 20%;">
+<col style="width: 5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Default Value</th>
+<th class="tableblock halign-center valign-middle">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Configuration</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The name of the configuration to use.</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>x</strong>&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Date From</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>x</strong>&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Limit</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>Number</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">20</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Fields</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>Object</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>x</strong>&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Primary Node Only</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>Boolean</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Whether this source should only be executed on the primary node when runnning in Cluster</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Scheduling Strategy</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p><a href="#scheduling-strategy">[scheduling-strategy]</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Configures the scheduler that triggers the polling</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>x</strong>&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Redelivery Policy</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p><a href="#RedeliveryPolicy">Redelivery Policy</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Defines a policy for processing the redelivery of the same message</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection Strategy</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="ulist">
+<ul>
+<li>
+<p><a href="#reconnect">Reconnect</a></p>
+</li>
+<li>
+<p><a href="#reconnect-forever">Reconnect Forever</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">A retry strategy in case of connectivity errors</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#160;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_output_2">Output</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Type</strong></p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>String</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_for_configurations_2">For Configurations.</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#config">Config</a> &#160;</p>
 </li>
 </ul>
 </div>
@@ -2969,6 +3132,74 @@ Default configuration
 </ul>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="RedeliveryPolicy">Redelivery Policy</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 25%;">
+<col style="width: 30%;">
+<col style="width: 15%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Field</th>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Default Value</th>
+<th class="tableblock halign-left valign-middle">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Max Redelivery Count</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>Number</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The maximum number of times a message can be redelivered and processed unsuccessfully before triggering process-failed-message</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Use Secure Hash</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>Boolean</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Whether to use a secure hash algorithm to identify a redelivered message</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Message Digest Algorithm</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The secure hashing algorithm to use. If not set, the default is SHA-256.</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Id Expression</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Defines one or more expressions to use to determine when a message has been redelivered. This property may only be set if useSecureHash is false.</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Object Store</p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p><a href="#ObjectStore">[ObjectStore]</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The object store where the redelivery counter for each message is going to be stored.</p></td>
 <td class="tableblock halign-left valign-middle"></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>

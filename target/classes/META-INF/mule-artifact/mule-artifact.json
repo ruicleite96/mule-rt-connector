@@ -3,7 +3,7 @@
     "id": "java",
     "attributes": {
       "type": "com.eurotux.connector.rt.internal.RTExtension",
-      "version": "0.0.2-SNAPSHOT"
+      "version": "1.0.6-SNAPSHOT"
     }
   },
   "name": "Request Tracker",

@@ -69,7 +69,7 @@ public enum RTError implements ErrorTypeDefinition<RTError> {
         return (error != null ? error : UNKNOWN_ERROR);
     }
 
-    public static Set<ErrorTypeDefinition> getETTemposErrors() {
+    public static Set<ErrorTypeDefinition> getRTErrors() {
         return ImmutableSet.<ErrorTypeDefinition>builder()
                 .add(TIMEOUT)
                 .add(CLIENT_SECURITY)

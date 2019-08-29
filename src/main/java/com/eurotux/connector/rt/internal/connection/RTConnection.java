@@ -20,7 +20,7 @@ public final class RTConnection {
 
     private RTConfiguration config;
 
-    private HttpAuthentication authentication;
+//    private HttpAuthentication authentication;
 
     private HttpClient httpClient;
 
@@ -52,7 +52,7 @@ public final class RTConnection {
         httpClient = httpService.getClientFactory().create(httpClientBuilder.build());
         httpClient.start();
         connected = true;
-        authentication = HttpAuthentication.basic(config.getUsername(), config.getPassword()).build();
+//        authentication = HttpAuthentication.basic(config.getUsername(), config.getPassword()).build();
     }
 
 
@@ -73,10 +73,10 @@ public final class RTConnection {
     }
 
     public HttpResponse sendRequest(HttpRequest request) throws IOException, TimeoutException {
-        return httpClient.send(request, 5000, false, authentication);
+        return httpClient.send(request, 50000, false, null);
     }
 
     public CompletableFuture<HttpResponse> sendRequestAsync(HttpRequest request) {
-        return httpClient.sendAsync(request, 5000, false, authentication);
+        return httpClient.sendAsync(request, 50000, false, null);
     }
 }

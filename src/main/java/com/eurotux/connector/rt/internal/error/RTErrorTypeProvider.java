@@ -9,6 +9,6 @@ public class RTErrorTypeProvider implements ErrorTypeProvider {
 
     @Override
     public Set<ErrorTypeDefinition> getErrorTypes() {
-        return RTError.getETTemposErrors();
+        return RTError.getRTErrors();
     }
 }
