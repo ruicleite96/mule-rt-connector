@@ -1,7 +1,8 @@
 package com.eurotux.connector.rt.internal.sources;
 
+import com.eurotux.connector.rt.internal.RTRequestBuilderFactory.RTRequestBuilder;
+import com.eurotux.connector.rt.internal.RTUtils;
 import com.eurotux.connector.rt.internal.connection.RTConnection;
-import com.eurotux.connector.rt.internal.error.RTError;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -22,8 +23,6 @@ import org.mule.runtime.extension.api.runtime.operation.Result;
 import org.mule.runtime.extension.api.runtime.source.PollContext;
 import org.mule.runtime.extension.api.runtime.source.PollingSource;
 import org.mule.runtime.extension.api.runtime.source.SourceCallbackContext;
-import org.mule.runtime.http.api.domain.message.request.HttpRequest;
-import org.mule.runtime.http.api.domain.message.request.HttpRequestBuilder;
 import org.mule.runtime.http.api.domain.message.response.HttpResponse;
 
 import javax.inject.Inject;
@@ -131,23 +130,18 @@ public class UpdatedTicketsListener extends PollingSource<String, Void> {
     }
 
     private ArrayNode retrieveTickets(LocalDate pollDate, int page) throws Exception {
-        HttpRequestBuilder requestBuilder = HttpRequest.builder()
-                .method(GET)
-                .uri(String.format("%s/tickets", connection.getConfig().getApiUrl()))
-                .addHeader("Content-Type", "application/json")
-                .addHeader("Authorization", String.format("token %s", connection.getConfig().getToken()))
-                .addQueryParam("per_page", String.valueOf(limit))
-                .addQueryParam("page", String.valueOf(page))
-                .addQueryParam("query", String.format("'LastUpdated'='%s'", pollDate.format(ISO_LOCAL_DATE)));
+        RTRequestBuilder builder = connection.requestBuilderFactory
+                .newRequest("tickets")
+                .withParam("per_page", String.valueOf(limit))
+                .withParam("page", String.valueOf(page))
+                .withParam("query", String.format("'LastUpdated'='%s'", pollDate.format(ISO_LOCAL_DATE)));
+        fields.forEach(builder::withParam);
 
-        fields.forEach(requestBuilder::addQueryParam);
+        HttpResponse response = builder.sendSyncWithRetry(GET);
 
-        HttpRequest request = requestBuilder.build();
-
-        HttpResponse response = connection.sendRequest(request);
         if (response.getStatusCode() != OK.getStatusCode()) {
             LOGGER.error(String.format("An error occurred calling RT API. Status code: %s.", response.getStatusCode()));
-            throw RTError.getThrowable(response, null);
+            throw RTUtils.getThrowable(response, response.getReasonPhrase());
         }
 
         ObjectNode data = (ObjectNode) mapper.readTree(response.getEntity().getContent());

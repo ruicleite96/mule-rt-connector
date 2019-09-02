@@ -20,10 +20,10 @@
                 <parameter name="username">
                     <description><![CDATA[]]></description>
                 </parameter>
-                <parameter name="password">
+                <parameter name="token">
                     <description><![CDATA[]]></description>
                 </parameter>
-                <parameter name="token">
+                <parameter name="maxRetries">
                     <description><![CDATA[]]></description>
                 </parameter>
                 <parameter name="tlsContextFactory">
@@ -43,10 +43,10 @@
                 <parameter name="username">
                     <description><![CDATA[]]></description>
                 </parameter>
-                <parameter name="password">
+                <parameter name="token">
                     <description><![CDATA[]]></description>
                 </parameter>
-                <parameter name="token">
+                <parameter name="maxRetries">
                     <description><![CDATA[]]></description>
                 </parameter>
                 <parameter name="tlsContextFactory">

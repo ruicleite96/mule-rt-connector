@@ -1,27 +1,25 @@
 package com.eurotux.connector.rt.internal.connection;
 
-import jdk.nashorn.internal.objects.annotations.Property;
 import org.mule.runtime.api.tls.TlsContextFactory;
 import org.mule.runtime.extension.api.annotation.param.Optional;
 import org.mule.runtime.extension.api.annotation.param.Parameter;
-import org.mule.runtime.extension.api.annotation.param.display.Password;
+import org.mule.runtime.extension.api.annotation.param.display.Example;
 
 public class RTConfiguration {
 
     @Parameter
+    @Example("https://suporte.eurotux.com/REST/2.0")
     private String apiUrl;
 
     @Parameter
-    @Optional
     private String username;
 
     @Parameter
-    @Optional
-    @Password
-    private String password;
+    private String token;
 
     @Parameter
-    private String token;
+    @Optional(defaultValue = "5")
+    private int maxRetries;
 
     @Parameter
     @Optional
@@ -36,12 +34,12 @@ public class RTConfiguration {
         return username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public String getToken() {
         return token;
+    }
+
+    public int getMaxRetries() {
+        return maxRetries;
     }
 
     public TlsContextFactory getTlsContextFactory() {
