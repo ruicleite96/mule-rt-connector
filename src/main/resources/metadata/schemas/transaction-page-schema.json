@@ -1,0 +1,101 @@
+{
+    "$schema": "http://json-schema.org/rt-transaction-page/schema#",
+    "type": "object",
+    "properties": {
+        "count": {
+            "type": "integer"
+        },
+        "page": {
+            "type": "integer"
+        },
+        "per_page": {
+            "type": "integer"
+        },
+        "total": {
+            "type": "integer"
+        },
+        "items": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "Type": {
+                            "type": "string"
+                        },
+                        "Created": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "Creator": {
+                            "type": "object",
+                            "properties": {
+                                "Created": {
+                                    "type": "string"
+                                },
+                                "RealName": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "LastUpdated": {
+                                    "type": "string"
+                                },
+                                "EmailAddress": {
+                                    "type": "string"
+                                },
+                                "Name": {
+                                    "type": "string"
+                                },
+                                "_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "Created",
+                                "RealName",
+                                "id",
+                                "type",
+                                "LastUpdated",
+                                "EmailAddress",
+                                "Name",
+                                "_url"
+                            ]
+                        },
+                        "TimeTaken": {
+                            "type": "string"
+                        },
+                        "_url": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "Type",
+                        "Created",
+                        "id",
+                        "type",
+                        "Creator",
+                        "TimeTaken",
+                        "_url"
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "count",
+        "page",
+        "per_page",
+        "total",
+        "items"
+    ]
+}

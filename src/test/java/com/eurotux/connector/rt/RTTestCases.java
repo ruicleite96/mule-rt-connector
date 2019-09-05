@@ -1,32 +1,54 @@
 package com.eurotux.connector.rt;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.junit.Assert;
 import org.junit.Test;
+import org.mule.functional.junit4.MuleArtifactFunctionalTestCase;
+import org.mule.runtime.api.event.Event;
 
-import java.io.IOException;
+public class RTTestCases extends MuleArtifactFunctionalTestCase {
 
-public class RTTestCases {
+    @Override
+    protected String getConfigFile() {
+        return "test-mule-config.xml";
+    }
 
     @Test
-    public void executeTest() {
-        String json = "{\"TimeTaken\": \"0m\", \"InternalTime\": \"\"}";
-        ObjectMapper mapper = new ObjectMapper();
+    public void testRetrieveTicket() {
         try {
-            ObjectNode objectNode = (ObjectNode) mapper.readTree(json);
-
-            JsonNode timeTaken = objectNode.get("TimeTaken");
-            JsonNode internalTime = objectNode.get("InternalTime");
-
-            System.out.println(String.format(
-                    "TimeTaken: %s; InternalTime: %s",
-                    timeTaken.asDouble(),
-                    internalTime.asDouble()
-            ));
-        } catch (IOException e) {
-            e.printStackTrace();
+            Event event = flowRunner("retrieveTicketFlow").run();
+            Object payloadValue = event.getMessage()
+                    .getPayload()
+                    .getValue();
+            Assert.assertNotNull(payloadValue);
+        } catch (Exception e) {
+            Assert.fail(e.getMessage());
         }
-
     }
+
+    @Test
+    public void testSearchTickets() {
+        try {
+            Event event = flowRunner("searchTicketsFlow").run();
+            Object payloadValue = event.getMessage()
+                    .getPayload()
+                    .getValue();
+            Assert.assertNotNull(payloadValue);
+        } catch (Exception e) {
+            Assert.fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testRetrieveTicketHistory() {
+        try {
+            Event event = flowRunner("retrieveTicketHistoryFlow").run();
+            Object payloadValue = event.getMessage()
+                    .getPayload()
+                    .getValue();
+            Assert.assertNotNull(payloadValue);
+        } catch (Exception e) {
+            Assert.fail(e.getMessage());
+        }
+    }
+
 }

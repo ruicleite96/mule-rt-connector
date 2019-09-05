@@ -1,0 +1,237 @@
+{
+    "$schema": "http://json-schema.org/rt-ticket-page/schema#",
+    "type": "object",
+    "properties": {
+        "count": {
+            "type": "integer"
+        },
+        "page": {
+            "type": "integer"
+        },
+        "per_page": {
+            "type": "integer"
+        },
+        "total": {
+            "type": "integer"
+        },
+        "items": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "TimeEstimated": {
+                            "type": "string"
+                        },
+                        "Status": {
+                            "type": "string"
+                        },
+                        "Queue": {
+                            "type": "object",
+                            "properties": {
+                                "Disabled": {
+                                    "type": "string"
+                                },
+                                "Created": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "LastUpdated": {
+                                    "type": "string"
+                                },
+                                "Description": {
+                                    "type": "string"
+                                },
+                                "Name": {
+                                    "type": "string"
+                                },
+                                "_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "Disabled",
+                                "Created",
+                                "id",
+                                "type",
+                                "LastUpdated",
+                                "Description",
+                                "Name",
+                                "_url"
+                            ]
+                        },
+                        "Started": {
+                            "type": "string"
+                        },
+                        "Starts": {
+                            "type": "string"
+                        },
+                        "TimeWorked": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "LastUpdated": {
+                            "type": "string"
+                        },
+                        "Subject": {
+                            "type": "string"
+                        },
+                        "Creator": {
+                            "type": "object",
+                            "properties": {
+                                "Created": {
+                                    "type": "string"
+                                },
+                                "RealName": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "LastUpdated": {
+                                    "type": "string"
+                                },
+                                "EmailAddress": {
+                                    "type": "string"
+                                },
+                                "Name": {
+                                    "type": "string"
+                                },
+                                "_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "Created",
+                                "RealName",
+                                "id",
+                                "type",
+                                "LastUpdated",
+                                "EmailAddress",
+                                "Name",
+                                "_url"
+                            ]
+                        },
+                        "_url": {
+                            "type": "string"
+                        },
+                        "Owner": {
+                            "type": "object",
+                            "properties": {
+                                "Created": {
+                                    "type": "string"
+                                },
+                                "RealName": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "LastUpdated": {
+                                    "type": "string"
+                                },
+                                "EmailAddress": {
+                                    "type": "string"
+                                },
+                                "Name": {
+                                    "type": "string"
+                                },
+                                "_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "Created",
+                                "RealName",
+                                "id",
+                                "type",
+                                "LastUpdated",
+                                "EmailAddress",
+                                "Name",
+                                "_url"
+                            ]
+                        },
+                        "EffectiveId": {
+                            "type": "string"
+                        },
+                        "LastUpdatedBy": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "type",
+                                "_url"
+                            ]
+                        },
+                        "Resolved": {
+                            "type": "string"
+                        },
+                        "Created": {
+                            "type": "string"
+                        },
+                        "Priority": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "Due": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "TimeEstimated",
+                        "Status",
+                        "Queue",
+                        "Started",
+                        "Starts",
+                        "TimeWorked",
+                        "id",
+                        "LastUpdated",
+                        "Subject",
+                        "Creator",
+                        "_url",
+                        "Owner",
+                        "EffectiveId",
+                        "LastUpdatedBy",
+                        "Resolved",
+                        "Created",
+                        "Priority",
+                        "type",
+                        "Due"
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "count",
+        "page",
+        "per_page",
+        "total",
+        "items"
+    ]
+}

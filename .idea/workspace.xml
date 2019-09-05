@@ -2,41 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="384efe54-c163-4440-a98f-66405ef79444" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_javax_activation_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_connectors_mule_http_connector_mule_plugin_1_5_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_connectors_mule_sockets_connector_mule_plugin_1_1_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_modules_mule_module_cors_kernel_1_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/RTRequestBuilderFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/RTUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_services_mule_service_scheduler_mule_service_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/RTClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/RTConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTBasicConnectionProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTTokenConnectionProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/error/RTError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/error/RTErrorTypeProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/metadata/schemas/ticket-page-schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/metadata/schemas/ticket-schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/metadata/schemas/transaction-array-schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/metadata/schemas/transaction-page-schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/metadata/schemas/user-schema.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_0_M1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_5_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_core_4_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_core_4_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_message_metadata_model_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_message_metadata_model_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_module_dsl_api_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_module_dsl_api_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_module_http_policy_api_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_module_http_policy_api_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_module_policy_api_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_module_policy_api_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_service_http_api_4_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_runtime_mule_service_http_api_4_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_services_mule_service_http_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mule_services_mule_service_http_mule_service_1_1_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mule-rt-connector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mule-rt-connector.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/RTExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/RTExtension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/RTRequestBuilderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/RTRequestBuilderFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/RTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/RTUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTConnectionProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/error/RTError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/error/RTErrorTypeProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/connection/RTBaseConnectionProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/operations/RTOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/operations/RTOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/sources/UpdatedTicketsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eurotux/connector/rt/internal/sources/UpdatedTicketsListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/eurotux/connector/rt/RTTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/eurotux/connector/rt/RTTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test-mule-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test-mule-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/mule-artifact/mule-artifact.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/mule-artifact/mule-artifact.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/request-tracker-extension-descriptions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/request-tracker-extension-descriptions.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/RTExtension.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/RTExtension.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/connection/RTConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/connection/RTConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/RTRequestBuilderFactory$RTRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/RTRequestBuilderFactory$RTRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/RTRequestBuilderFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/RTRequestBuilderFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/RTUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/RTUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/connection/RTConfiguration.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/connection/RTConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/connection/RTConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/connection/RTConnectionProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/connection/RTConnectionProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/error/RTError.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/error/RTErrorTypeProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/connection/RTConnectionProvider.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/operations/RTOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/operations/RTOperations.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/sources/UpdatedTicketsListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/eurotux/connector/rt/internal/sources/UpdatedTicketsListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/docs/request-tracker-documentation.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/docs/request-tracker-documentation.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/docs/request-tracker-documentation.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/docs/request-tracker-documentation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mule-rt-connector-1.0.6-SNAPSHOT-mule-plugin.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mule-rt-connector-1.0.7-SNAPSHOT-mule-plugin.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/temporal-extension-model.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/temporal-extension-model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/eurotux/connector/rt/RTTestCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/eurotux/connector/rt/RTTestCases.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test-mule-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test-mule-config.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +81,9 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="1Q2yNsoV93QzrsA9ALOwaj5YH0I" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -94,6 +117,7 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install -DskipTests" />
+      <command value="mvn " />
       <command value="mvn clean deploy -DskipTests" />
     </option>
   </component>
@@ -109,12 +133,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.RTTestCases.testRetrieveTicketHistory">
+    <configuration name="RTTestCases" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mule-rt-connector" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eurotux.connector.rt.internal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.eurotux.connector.rt" />
+      <option name="MAIN_CLASS_NAME" value="com.eurotux.connector.rt.RTTestCases" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RTTestCases.executeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mule-rt-connector" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eurotux.connector.rt.*" />
+          <option name="PATTERN" value="com.eurotux.connector.rt.internal.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,8 +165,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RTTestCases.testRetrieveTicketHistory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mule-rt-connector" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eurotux.connector.rt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.eurotux.connector.rt" />
+      <option name="MAIN_CLASS_NAME" value="com.eurotux.connector.rt.RTTestCases" />
+      <option name="METHOD_NAME" value="testRetrieveTicketHistory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RTTestCases.testRetrieveTicketHistory" />
+        <item itemvalue="JUnit.RTTestCases" />
         <item itemvalue="JUnit.RTTestCases.executeTest" />
       </list>
     </recent_temporary>
@@ -177,40 +234,14 @@
       <workItem from="1566982953839" duration="3853000" />
       <workItem from="1567415365146" duration="10541000" />
       <workItem from="1567433454621" duration="2469000" />
+      <workItem from="1567444303924" duration="604000" />
+      <workItem from="1567445201356" duration="25000" />
+      <workItem from="1567498410334" duration="18240000" />
+      <workItem from="1567584759236" duration="3146000" />
+      <workItem from="1567591317281" duration="18946000" />
+      <workItem from="1567671357116" duration="11300000" />
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="RTTestCases_executeTest - 2019.08.19 at 11h 42m 49s.xml">
-      <configuration name="RTTestCases.executeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RTTestCases_executeTest - 2019.08.19 at 11h 43m 20s.xml">
-      <configuration name="RTTestCases.executeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RTTestCases_executeTest - 2019.08.19 at 11h 43m 39s.xml">
-      <configuration name="RTTestCases.executeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RTTestCases_executeTest - 2019.08.19 at 11h 43m 50s.xml">
-      <configuration name="RTTestCases.executeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RTTestCases_executeTest - 2019.08.19 at 11h 44m 02s.xml">
-      <configuration name="RTTestCases.executeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RTTestCases_executeTest - 2019.08.19 at 11h 44m 27s.xml">
-      <configuration name="RTTestCases.executeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RTTestCases_executeTest - 2019.08.19 at 11h 45m 26s.xml">
-      <configuration name="RTTestCases.executeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RTTestCases_executeTest - 2019.08.19 at 11h 45m 38s.xml">
-      <configuration name="RTTestCases.executeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RTTestCases_executeTest - 2019.08.19 at 11h 45m 52s.xml">
-      <configuration name="RTTestCases.executeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RTTestCases_executeTest - 2019.08.19 at 11h 46m 06s.xml">
-      <configuration name="RTTestCases.executeTest" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

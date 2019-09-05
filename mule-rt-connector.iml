@@ -23,7 +23,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.8" level="project" />
     <orderEntry type="library" name="Maven: com.zackehh:jive:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.9" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-metadata-model-json:1.1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.code.gson:gson:2.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.everit.json:org.everit.json.schema:1.5.0" level="project" />
@@ -33,58 +32,62 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-metadata-model-api:1.1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:api-annotations:1.0.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-service-http-api:4.1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-core:4.1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-dsl-api:1.1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-http-policy-api:1.1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-policy-api:1.1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-message-metadata-model:1.1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-beanutils:commons-beanutils:1.9.3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.stephenc.eaio-uuid:uuid:3.4.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.stephenc.eaio-grabbag:grabbag:1.8.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-cli:commons-cli:1.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.services:mule-service-http:mule-service:1.1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.geronimo.specs:geronimo-servlet_3.0_spec:1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.glassfish.grizzly:grizzly-http-server:2.3.34" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.glassfish.grizzly:grizzly-http:2.3.34" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.glassfish.grizzly:connection-pool:2.3.34" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.glassfish.grizzly:grizzly-framework:2.3.34" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.mail:mail:1.4.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.glassfish.grizzly:grizzly-http-client:1.14" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.glassfish.grizzly:grizzly-websockets:2.3.34" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.commons:commons-text:1.1" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-pool:commons-pool:1.6" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.transaction:javax.transaction-api:1.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.geronimo.specs:geronimo-j2ee-connector_1.5_spec:2.0.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.inject:javax.inject:1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.mvel:mule-mvel2:2.1.9-MULE-015" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jgrapht:jgrapht-jdk1.5:0.7.3" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:23.5-jre" level="project" />
     <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:2.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.0.18" level="project" />
     <orderEntry type="library" name="Maven: com.google.j2objc:j2objc-annotations:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.mojo:animal-sniffer-annotations:1.14" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.reflections:reflections:0.9.10" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: io.projectreactor:reactor-core:3.2.0.M1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: io.projectreactor.addons:reactor-extra:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.18" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: cglib:cglib-nodep:3.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.commons:commons-pool2:2.4.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.jms:javax.jms-api:2.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.mule.services:mule-service-http:1.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.geronimo.specs:geronimo-servlet_3.0_spec:1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-http-server:2.3.34" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-http:2.3.34" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.grizzly:connection-pool:2.3.34" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-framework:2.3.34" level="project" />
-    <orderEntry type="library" name="Maven: javax.mail:mail:1.4.3" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-http-client:1.14" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-websockets:2.3.34" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-text:1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.11.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.11.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.services:mule-service-scheduler:mule-service:1.1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.quartz-scheduler:quartz:2.2.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.mchange:c3p0:0.9.5.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.mchange:mchange-commons-java:0.2.11" level="project" />
     <orderEntry type="library" name="Maven: org.mule.connectors:mule-http-connector:mule-plugin:1.5.4" level="project" />
     <orderEntry type="library" name="Maven: org.mule.connectors:mule-sockets-connector:mule-plugin:1.1.5" level="project" />
     <orderEntry type="library" name="Maven: org.mule.modules:mule-module-cors-kernel:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.11" level="project" />
     <orderEntry type="library" name="Maven: com.sun.activation:javax.activation:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.9" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.11.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.11.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-extensions-api:1.1.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.reactivestreams:reactive-streams:1.0.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-api:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-artifact-declaration:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-core:4.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-dsl-api:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-http-policy-api:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-policy-api:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-message-metadata-model:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-beanutils:commons-beanutils:1.9.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.stephenc.eaio-uuid:uuid:3.4.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.stephenc.eaio-grabbag:grabbag:1.8.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-cli:commons-cli:1.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-pool:commons-pool:1.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.transaction:javax.transaction-api:1.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.geronimo.specs:geronimo-j2ee-connector_1.5_spec:2.0.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.mvel:mule-mvel2:2.1.9-MULE-015" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jgrapht:jgrapht-jdk1.5:0.7.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.reflections:reflections:0.9.10" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.projectreactor:reactor-core:3.2.0.M1-MULE-001" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: io.projectreactor.addons:reactor-extra:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.18" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: cglib:cglib-nodep:3.2.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.commons:commons-pool2:2.5.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.jms:javax.jms-api:2.0.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-extensions-spring-support:4.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-spring-config:4.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-artifact:4.1.1" level="project" />
@@ -104,6 +107,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-extensions-soap-support:4.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-extensions-soap-api:1.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-service-soap-api:4.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-service-http-api:4.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-module-tls:4.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: jboss:javassist:3.7.ga" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: joda-time:joda-time:2.9.1" level="project" />
@@ -146,7 +150,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.common:scala-common_2.12:0.1.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.scalactic:scalactic_2.12:3.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mule.tests.plugin:mule-tests-component-plugin:mule-plugin:4.1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.projectreactor:reactor-core:3.2.0.M1-MULE-001" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mule.tests.plugin:mule-core-deprecated-schema-plugin:mule-plugin:4.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mule.tests:mule-tests-functional:4.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mule.runtime:mule-module-service:test-jar:tests:4.1.1" level="project" />

@@ -1,0 +1,247 @@
+{
+    "$schema": "http://json-schema.org/rt-ticket/schema#",
+    "type": "object",
+    "properties": {
+        "TimeEstimated": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Queue": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type",
+                "_url"
+            ]
+        },
+        "AdminCc": {
+            "type": "array",
+            "items": {}
+        },
+        "Started": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "InitialPriority": {
+            "type": "string"
+        },
+        "Starts": {
+            "type": "string"
+        },
+        "TimeWorked": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "LastUpdated": {
+            "type": "string"
+        },
+        "Requestor": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "_url": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "type",
+                        "_url"
+                    ]
+                }
+            ]
+        },
+        "Cc": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "_url": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "type",
+                        "_url"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "_url": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "type",
+                        "_url"
+                    ]
+                }
+            ]
+        },
+        "Subject": {
+            "type": "string"
+        },
+        "FinalPriority": {
+            "type": "string"
+        },
+        "TimeLeft": {
+            "type": "string"
+        },
+        "Creator": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type",
+                "_url"
+            ]
+        },
+        "Owner": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type",
+                "_url"
+            ]
+        },
+        "EffectiveId": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type",
+                "_url"
+            ]
+        },
+        "LastUpdatedBy": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "_url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type",
+                "_url"
+            ]
+        },
+        "Resolved": {
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "string"
+        },
+        "Due": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "TimeEstimated",
+        "Status",
+        "Queue",
+        "AdminCc",
+        "Started",
+        "Type",
+        "InitialPriority",
+        "Starts",
+        "TimeWorked",
+        "id",
+        "CustomFields",
+        "LastUpdated",
+        "Requestor",
+        "Cc",
+        "Subject",
+        "FinalPriority",
+        "TimeLeft",
+        "Creator",
+        "Owner",
+        "EffectiveId",
+        "LastUpdatedBy",
+        "Resolved",
+        "Created",
+        "Priority",
+        "Due"
+    ]
+}

@@ -1,19 +1,33 @@
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:odoo="http://www.mulesoft.org/schema/mule/odoo"
+      xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+      xmlns:rt="http://www.mulesoft.org/schema/mule/rt"
       xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-          http://www.mulesoft.org/schema/mule/odoo http://www.mulesoft.org/schema/mule/odoo/current/mule-odoo.xsd">
+          http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd
+          http://www.mulesoft.org/schema/mule/rt http://www.mulesoft.org/schema/mule/rt/current/mule-rt.xsd">
 
-    <odoo:config name="config" configId="configId">
-        <odoo:connection requiredParameter="aValue" />
-    </odoo:config>
+    <rt:config name="rt-pre-config">
+        <rt:basic-connection
+                username="rcl"
+                password="HYD1F2CEa"
+                apiUrl="https://rt-pre.dmz.etux/REST/2.0">
+            <tls:context>
+                <tls:trust-store insecure="true"/>
+            </tls:context>
+        </rt:basic-connection>
+    </rt:config>
 
-    <flow name="sayHiFlow">
-        <odoo:say-hi person="Mariano Gonzalez"/>
+    <flow name="retrieveTicketFlow">
+        <rt:retrieve-ticket config-ref="rt-pre-config" ticketId="165324"/>
     </flow>
 
-    <flow name="retrieveInfoFlow">
-        <odoo:retrieve-info config-ref="config"/>
+    <flow name="searchTicketsFlow">
+        <rt:search-tickets config-ref="rt-pre-config" ticketSQL="'Queue'='eurotux'" page="1" perPage="2"/>
     </flow>
 
+    <flow name="retrieveTicketHistoryFlow">
+        <rt:retrieve-all-ticket-history
+                config-ref="rt-pre-config" types='#[["Comment", "Correspond", "Set"]]' ticketId="165324"
+                onlyWithTimeTaken="true"/>
+    </flow>
 </mule>

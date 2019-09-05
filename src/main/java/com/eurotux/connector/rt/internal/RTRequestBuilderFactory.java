@@ -1,6 +1,7 @@
 package com.eurotux.connector.rt.internal;
 
-import com.eurotux.connector.rt.internal.connection.RTConfiguration;
+import com.eurotux.connector.rt.internal.connection.RTConfig;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
@@ -9,19 +10,23 @@ import org.mule.runtime.api.lifecycle.Initialisable;
 import org.mule.runtime.api.lifecycle.InitialisationException;
 import org.mule.runtime.api.tls.TlsContextFactory;
 import org.mule.runtime.api.util.MultiMap;
+import org.mule.runtime.extension.api.exception.ModuleException;
 import org.mule.runtime.http.api.HttpConstants.Method;
 import org.mule.runtime.http.api.HttpService;
 import org.mule.runtime.http.api.client.HttpClient;
 import org.mule.runtime.http.api.client.HttpClientConfiguration;
+import org.mule.runtime.http.api.client.auth.HttpAuthentication;
 import org.mule.runtime.http.api.domain.entity.ByteArrayHttpEntity;
 import org.mule.runtime.http.api.domain.message.request.HttpRequest;
 import org.mule.runtime.http.api.domain.message.request.HttpRequestBuilder;
 import org.mule.runtime.http.api.domain.message.response.HttpResponse;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeoutException;
 
+import static com.eurotux.connector.rt.internal.error.RTError.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.mule.runtime.http.api.HttpConstants.Method.GET;
 import static org.mule.runtime.http.api.HttpHeaders.Names.AUTHORIZATION;
@@ -34,18 +39,28 @@ public class RTRequestBuilderFactory {
 
     private final ObjectMapper mapper = new ObjectMapper();
 
-    private RTConfiguration connectionConfig;
+    private RTConfig connectionConfig;
 
     private HttpClient httpClient;
+
+    private String token;
+
+    private HttpAuthentication authentication;
 
     private int responseTimeout;
 
 
-    public RTRequestBuilderFactory(RTConfiguration connectionConfig) {
-        this(connectionConfig, 5000);
+    public RTRequestBuilderFactory(RTConfig connectionConfig, String token) {
+        this(connectionConfig, 50000);
+        this.token = token;
     }
 
-    public RTRequestBuilderFactory(RTConfiguration connectionConfig, int responseTimeout) {
+    public RTRequestBuilderFactory(RTConfig connectionConfig, String username, String password) {
+        this(connectionConfig, 50000);
+        this.authentication = HttpAuthentication.basic(username, password).build();
+    }
+
+    private RTRequestBuilderFactory(RTConfig connectionConfig, int responseTimeout) {
         this.connectionConfig = connectionConfig;
         this.responseTimeout = responseTimeout;
     }
@@ -68,8 +83,8 @@ public class RTRequestBuilderFactory {
         this.httpClient.stop();
     }
 
-    public boolean validate() throws IOException, TimeoutException {
-        HttpResponse response = newRequest(String.format("user/%s", connectionConfig.getUsername()))
+    public boolean validate() {
+        HttpResponse response = newRequest(String.format("user/%s", "rcl"))
                 .sendSyncWithRetry(GET);
         return response.getStatusCode() != 401;
     }
@@ -90,11 +105,17 @@ public class RTRequestBuilderFactory {
 
         public RTRequestBuilder(String endpoint) {
             this.uri = connectionConfig.getApiUrl() + "/" + endpoint;
-            this.withHeader(AUTHORIZATION, String.format("token %s", connectionConfig.getToken()));
+            if (token != null) {
+                this.withHeader(AUTHORIZATION, String.format("token %s", token));
+            }
         }
 
-        public RTRequestBuilder withBody(JsonNode body) throws IOException {
-            this.builder.entity(new ByteArrayHttpEntity(mapper.writeValueAsBytes(body)));
+        public RTRequestBuilder withBody(JsonNode body) {
+            try {
+                this.builder.entity(new ByteArrayHttpEntity(mapper.writeValueAsBytes(body)));
+            } catch (JsonProcessingException e) {
+                throw new ModuleException(EXECUTION, e);
+            }
             return this;
         }
 
@@ -104,6 +125,11 @@ public class RTRequestBuilderFactory {
         }
 
         public RTRequestBuilder withParams(MultiMap<String, String> queryParams) {
+            this.queryParams.putAll(queryParams);
+            return this;
+        }
+
+        public RTRequestBuilder withParams(Map<String, String> queryParams) {
             this.queryParams.putAll(queryParams);
             return this;
         }
@@ -124,21 +150,31 @@ public class RTRequestBuilderFactory {
         }
 
         public CompletableFuture<HttpResponse> sendAsync(Method method) {
-            return httpClient.sendAsync(build(method), responseTimeout, true, null);
+            return httpClient.sendAsync(build(method), responseTimeout, true, authentication);
         }
 
-        public HttpResponse sendSync(Method method) throws IOException, TimeoutException {
-            return httpClient.send(build(method), responseTimeout, true, null);
+        public HttpResponse sendSync(Method method) {
+            try {
+                return httpClient.send(build(method), responseTimeout, true, authentication);
+            } catch (IOException e) {
+                throw new ModuleException(EXECUTION, e);
+            } catch (TimeoutException e) {
+                throw new ModuleException(TIMEOUT, e);
+            }
         }
 
-        public HttpResponse sendSyncWithRetry(Method method) throws IOException, TimeoutException {
+        public HttpResponse sendSyncWithRetry(Method method) {
             return sendSyncWithRetry(method, connectionConfig.getMaxRetries());
         }
 
-        private HttpResponse sendSyncWithRetry(Method method, int retries) throws IOException, TimeoutException {
+        private HttpResponse sendSyncWithRetry(Method method, int retries) {
             HttpResponse httpResponse = sendSync(method);
-            if (httpResponse.getStatusCode() == 401 && retries > 0) {
-                return sendSyncWithRetry(method, retries - 1);
+            if (httpResponse.getStatusCode() == 401) {
+                if (retries == 0) {
+                    throw new ModuleException(httpResponse.getReasonPhrase(), RETRIES_EXCEEDED);
+                } else {
+                    return sendSyncWithRetry(method, retries - 1);
+                }
             } else {
                 return httpResponse;
             }
